@@ -1,13 +1,14 @@
 import { useRef, useLayoutEffect, useState } from "react";
 import type { DockItem } from "./Dock";
 import { useMenuBar } from "../hooks/useMenuBar";
+import '../App.css'
 
 type Props = {
   item: DockItem;
   mouseX: number | null;
 };
 
-const ICON_SIZE = 40;
+const ICON_SIZE = 48;
 const MAX_SCALE = 1.8;
 const RANGE = 100; // thoda smooth feel ke liye
 
@@ -51,7 +52,7 @@ export default function DockIcon({ item, mouseX }: Props) {
         }}
         className="flex items-center justify-center"
       >
-        {item.icon}
+        <div className="w-full h-full">{item.icon}</div>
       </div>
 
       {/* 🔵 Active Dot */}
@@ -60,9 +61,7 @@ export default function DockIcon({ item, mouseX }: Props) {
       )}
 
       {/* LABEL */}
-      <span className="text-[10px] opacity-60 mt-1">
-        {item.label}
-      </span>
+      <span className="text-[10px] opacity-60 mt-1">{item.label}</span>
     </div>
   );
 }

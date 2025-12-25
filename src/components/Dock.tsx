@@ -18,16 +18,24 @@ export type DockItem = {
 export const dockItems: DockItem[] = [
   {
     label: "Finder",
-    icon: "🗂️",
-    menu: [
-      { label: "File" },
-      { label: "Edit" },
-      { label: "View" },
-    ],
+    icon: (
+      <img
+        src="./src/assets/icon/Finder.png"
+        alt="Finder"
+        draggable={false}
+      />
+    ),
+    menu: [{ label: "File" }, { label: "Edit" }, { label: "View" }],
   },
   {
     label: "Preview",
-    icon: "📄",
+    icon: (
+      <img
+        src="./src/assets/icon/preview.ico"
+        alt="Preview"
+        draggable={false}
+      />
+    ),
     menu: [
       { label: "File" },
       { label: "Edit" },
@@ -37,16 +45,24 @@ export const dockItems: DockItem[] = [
   },
   {
     label: "Browser",
-    icon: "🧭",
-    menu: [
-      { label: "File" },
-      { label: "Edit" },
-      { label: "View" },
-    ],
+    icon: (
+      <img
+        src="./src/assets/icon/safari.png"
+        alt="Safari"
+        draggable={false}
+      />
+    ),
+    menu: [{ label: "File" }, { label: "Edit" }, { label: "View" }],
   },
   {
-    label: "Trash",
-    icon: "🗑️",
+    label: "LinkedIn",
+    icon: (
+      <img
+        src="./src/assets/icon/LinkedIn.png"
+        alt="LinkedIn"
+        draggable={false}
+      />
+    ),
     menu: [
       { label: "File" },
       { label: "Edit" },
@@ -55,6 +71,7 @@ export const dockItems: DockItem[] = [
     ],
   },
 ];
+
 
 
 
@@ -68,7 +85,7 @@ export default function Dock() {
         ref={dockRef}
         onMouseMove={(e) => setMouseX(e.clientX)}
         onMouseLeave={() => setMouseX(null)}
-        className="flex gap-4 px-4 py-3 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20"
+        className="flex gap-7 px-4 py-3 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20"
       >
         {dockItems.map((item) => (
           <DockIcon
